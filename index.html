@@ -65,7 +65,22 @@
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+  <style>
+    .results-container { max-width: 1280px !important; }
+    .table-intro { text-align: center; color: #596575; margin: -0.5rem 0 1.25rem; font-size: .9rem; }
+    .full-results-scroll { overflow-x: auto; border: 1px solid #dce1e6; }
+    .full-results { width: 100%; min-width: 1180px; border-collapse: separate; border-spacing: 0; font-size: .78rem; font-variant-numeric: tabular-nums; }
+    .full-results caption { text-align: left; padding: .8rem 1rem; font-size: .85rem; color: #526172; }
+    .full-results th, .full-results td { padding: .55rem .35rem; text-align: right; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+    .full-results thead th { text-align: center; background: #f4f6f8; color: #1d304b; }
+    .full-results th:first-child { text-align: left; }
+    .full-results tbody th[scope="row"] { position: sticky; left: 0; background: #fff; z-index: 1; min-width: 175px; padding-left: .8rem; border-right: 1px solid #dce1e6; font-weight: 400; }
+    .full-results .group th { background: #eaf0f5; color: #1d304b; font-weight: 600; text-align: left; padding: .6rem .8rem; }
+    .full-results .axis-start { border-left: 1px solid #e5e7eb; }
+    .full-results .overall { background: #f4f6f8; }
+    .full-results strong { color: #172b45; }
+    .table-notes { font-size: .82rem; margin-top: .9rem; line-height: 1.6; }
+  </style>
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -90,7 +105,7 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
@@ -275,106 +290,44 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- Benchmark examples -->
+<section class="section" id="benchmark-examples">
+  <div class="container is-max-desktop">
+    <img src="static/images/examples.png" width="2700" height="2422" alt="GenOlympiad examples across nine capability axes" loading="lazy" style="display:block;width:100%;height:auto">
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End benchmark examples -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
+<!-- BEGIN GenOlympiad embedded demos -->
+<section class="section" id="evaluation-demos">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Evaluation Examples</h2>
+    <img src="static/images/workflow.png" width="1340" height="432" alt="GenOlympiad evaluation workflow: easy questions, grounding evidence, hard questions, and scoring" loading="lazy" style="display:block;width:100%;height:auto;margin:0 0 16px">
+    <script>
+(() => {
+ const selector='iframe[data-genolympiad-demo]';
+ function accept(event){const d=event.data;if(!d||d.type!=='genolympiad-demo-size'||!Number.isFinite(d.height)||d.height<1||d.height>20000)return;for(const f of document.querySelectorAll(selector)){if(f.contentWindow!==event.source)continue;const origin=new URL(f.src,document.baseURI).origin;if(origin!=='null'&&event.origin!==origin)continue;f.style.height=Math.ceil(d.height)+'px';}}
+ window.addEventListener('message',accept);
+ function request(f){try{const body=f.contentDocument&&f.contentDocument.body;if(body){const h=Math.ceil(body.getBoundingClientRect().height);if(h>1)f.style.height=h+'px';}}catch(_){}try{f.contentWindow.postMessage({type:'genolympiad-demo-measure'},'*');}catch(_){}}
+ function init(){for(const f of document.querySelectorAll(selector)){f.setAttribute('scrolling','no');f.addEventListener('load',()=>request(f));let width=0;if(window.ResizeObserver)new ResizeObserver(()=>{const w=f.getBoundingClientRect().width;if(w!==width){width=w;request(f);}}).observe(f);request(f);for(const delay of [100,500,1500])setTimeout(()=>request(f),delay);}window.addEventListener('resize',()=>document.querySelectorAll(selector).forEach(request));}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+    <iframe data-genolympiad-demo src="static/genolympiad-demos/dice.html?v=heightfix6" title="Dice grounding and scoring" height="850" style="display:block;width:100%;border:0;margin:8px 0"></iframe>
+    <iframe data-genolympiad-demo src="static/genolympiad-demos/compass.html?v=heightfix6" title="Compass grounding and scoring" height="850" style="display:block;width:100%;border:0;margin:8px 0"></iframe>
+    <iframe data-genolympiad-demo src="static/genolympiad-demos/easy.html?v=heightfix6" title="Easy Question" height="780" style="display:block;width:100%;border:0;margin:8px 0"></iframe>
+    <iframe data-genolympiad-demo src="static/genolympiad-demos/withheld.html?v=heightfix6" title="Withheld example" height="1000" style="display:block;width:100%;border:0;margin:8px 0"></iframe>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- END GenOlympiad embedded demos -->
 
-
-
-
+<section class="section release-section" id="results"><div class="container results-container">
+<h2 class="title is-3 has-text-centered"></span>Results</h2>
+<div class="full-results-scroll" role="region" aria-label="Complete GenOlympiad results; scroll horizontally to view all axes" tabindex="0">
+<table class="full-results"><caption>Table 1. S: Strict; R: Relaxed. Scores out of 100.</caption><thead><tr><th rowspan="2" scope="col">Model</th><th colspan="2" scope="colgroup" title="Text fidelity" class="axis-start">Text</th><th colspan="2" scope="colgroup" title="Counterfactual instruction following" class="axis-start">C-Fact</th><th colspan="2" scope="colgroup" title="Symbolic systems" class="axis-start">Symbol</th><th colspan="2" scope="colgroup" title="World-knowledge grounding" class="axis-start">World</th><th colspan="2" scope="colgroup" title="Physical consistency" class="axis-start">Phys</th><th colspan="2" scope="colgroup" title="Quantity and precision" class="axis-start">Quant</th><th colspan="2" scope="colgroup" title="Spatial and 3D reasoning" class="axis-start">Spatial</th><th colspan="2" scope="colgroup" title="Latent computation" class="axis-start">Latent</th><th colspan="2" scope="colgroup" title="Long-range consistency" class="axis-start">Long</th><th colspan="2" scope="colgroup" title="Mean over all scored tasks" class="axis-start">Overall</th></tr><tr><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th><th scope="col">S</th><th scope="col">R</th></tr></thead><tbody><tr class="group"><th colspan="21">Coding Models</th></tr><tr><th scope="row">GPT-6 Astra</th><td class="axis-start"><strong>65.4</strong></td><td class=""><strong>74.1</strong></td><td class="axis-start"><strong>38.4</strong></td><td class=""><strong>50.2</strong></td><td class="axis-start"><strong>45.5</strong></td><td class=""><strong>56.4</strong></td><td class="axis-start"><strong>27.5</strong></td><td class=""><strong>46.9</strong></td><td class="axis-start">25.6</td><td class=""><strong>43.0</strong></td><td class="axis-start"><strong>40.8</strong></td><td class=""><strong>54.0</strong></td><td class="axis-start">26.7</td><td class="">48.3</td><td class="axis-start"><strong>58.4</strong></td><td class=""><strong>73.7</strong></td><td class="axis-start"><strong>30.0</strong></td><td class=""><strong>53.1</strong></td><td class="overall"><strong>40.5</strong></td><td class="overall"><strong>56.1</strong></td></tr><tr><th scope="row">GPT-5.6 Sol</th><td class="axis-start">62.5</td><td class="">72.4</td><td class="axis-start">32.2</td><td class="">43.3</td><td class="axis-start">42.3</td><td class="">55.5</td><td class="axis-start">26.0</td><td class="">43.5</td><td class="axis-start"><strong>27.7</strong></td><td class="">41.6</td><td class="axis-start">31.6</td><td class="">45.8</td><td class="axis-start"><strong>28.2</strong></td><td class=""><strong>49.4</strong></td><td class="axis-start">53.3</td><td class="">69.1</td><td class="axis-start">28.4</td><td class="">46.7</td><td class="overall">37.5</td><td class="overall">52.4</td></tr><tr class="group"><th colspan="21">Prompt Engineering on GPT-Image-2.5</th></tr><tr><th scope="row">GPT 5.6 Sol</th><td class="axis-start"><strong>62.2</strong></td><td class=""><strong>71.7</strong></td><td class="axis-start"><strong>33.0</strong></td><td class=""><strong>48.7</strong></td><td class="axis-start"><strong>30.4</strong></td><td class=""><strong>44.7</strong></td><td class="axis-start"><strong>17.8</strong></td><td class=""><strong>36.2</strong></td><td class="axis-start"><strong>25.0</strong></td><td class=""><strong>39.4</strong></td><td class="axis-start"><strong>24.3</strong></td><td class=""><strong>40.8</strong></td><td class="axis-start"><strong>12.5</strong></td><td class=""><strong>34.3</strong></td><td class="axis-start"><strong>55.8</strong></td><td class=""><strong>72.3</strong></td><td class="axis-start"><strong>27.2</strong></td><td class=""><strong>43.2</strong></td><td class="overall"><strong>33.0</strong></td><td class="overall"><strong>48.9</strong></td></tr><tr><th scope="row">PromptEnhancer</th><td class="axis-start">26.9</td><td class="">38.7</td><td class="axis-start">21.3</td><td class="">33.9</td><td class="axis-start">19.8</td><td class="">30.7</td><td class="axis-start">6.8</td><td class="">19.0</td><td class="axis-start">8.3</td><td class="">24.5</td><td class="axis-start">16.7</td><td class="">27.7</td><td class="axis-start">8.9</td><td class="">26.8</td><td class="axis-start">15.2</td><td class="">30.6</td><td class="axis-start">11.0</td><td class="">22.3</td><td class="overall">15.1</td><td class="overall">28.4</td></tr><tr class="group"><th colspan="21">Closed-source T2I Models</th></tr><tr><th scope="row">Nano Banana Pro</th><td class="axis-start"><strong>41.5</strong></td><td class=""><strong>55.8</strong></td><td class="axis-start"><strong>27.8</strong></td><td class=""><strong>39.3</strong></td><td class="axis-start"><strong>25.6</strong></td><td class=""><strong>38.6</strong></td><td class="axis-start">10.5</td><td class=""><strong>29.5</strong></td><td class="axis-start">13.1</td><td class=""><strong>33.8</strong></td><td class="axis-start"><strong>17.1</strong></td><td class=""><strong>27.0</strong></td><td class="axis-start">11.2</td><td class="">30.7</td><td class="axis-start"><strong>38.1</strong></td><td class=""><strong>56.0</strong></td><td class="axis-start"><strong>24.4</strong></td><td class=""><strong>43.2</strong></td><td class="overall"><strong>23.9</strong></td><td class="overall"><strong>40.0</strong></td></tr><tr><th scope="row">GPT-Image-2.5</th><td class="axis-start">30.4</td><td class="">41.8</td><td class="axis-start">23.0</td><td class="">36.4</td><td class="axis-start">20.5</td><td class="">34.8</td><td class="axis-start">6.8</td><td class="">24.1</td><td class="axis-start">8.1</td><td class="">23.7</td><td class="axis-start">13.2</td><td class="">25.0</td><td class="axis-start"><strong>18.4</strong></td><td class=""><strong>34.6</strong></td><td class="axis-start">6.5</td><td class="">21.9</td><td class="axis-start">9.8</td><td class="">25.9</td><td class="overall">14.9</td><td class="overall">29.6</td></tr><tr><th scope="row">Seedream 5.0 Pro</th><td class="axis-start">19.0</td><td class="">30.8</td><td class="axis-start">24.1</td><td class="">36.0</td><td class="axis-start">18.9</td><td class="">32.7</td><td class="axis-start">2.5</td><td class="">16.6</td><td class="axis-start"><strong>13.8</strong></td><td class="">30.8</td><td class="axis-start">10.4</td><td class="">20.7</td><td class="axis-start">9.9</td><td class="">23.7</td><td class="axis-start">20.8</td><td class="">34.7</td><td class="axis-start">13.7</td><td class="">26.6</td><td class="overall">15.1</td><td class="overall">28.4</td></tr><tr><th scope="row">Nano Banana 2</th><td class="axis-start">19.5</td><td class="">28.5</td><td class="axis-start">13.4</td><td class="">27.3</td><td class="axis-start">6.6</td><td class="">18.4</td><td class="axis-start"><strong>13.9</strong></td><td class="">27.0</td><td class="axis-start">8.9</td><td class="">23.0</td><td class="axis-start">6.8</td><td class="">18.3</td><td class="axis-start">8.1</td><td class="">20.9</td><td class="axis-start">16.2</td><td class="">32.5</td><td class="axis-start">15.9</td><td class="">29.3</td><td class="overall">12.4</td><td class="overall">25.4</td></tr><tr><th scope="row">GPT-Image-2</th><td class="axis-start">20.8</td><td class="">32.8</td><td class="axis-start">14.0</td><td class="">26.7</td><td class="axis-start">17.5</td><td class="">29.6</td><td class="axis-start">5.4</td><td class="">17.2</td><td class="axis-start">6.1</td><td class="">20.3</td><td class="axis-start">5.2</td><td class="">17.3</td><td class="axis-start">10.1</td><td class="">24.9</td><td class="axis-start">5.6</td><td class="">18.2</td><td class="axis-start">8.8</td><td class="">25.1</td><td class="overall">10.2</td><td class="overall">23.4</td></tr><tr><th scope="row">GPT-Image-1.5</th><td class="axis-start">10.1</td><td class="">19.8</td><td class="axis-start">10.1</td><td class="">19.9</td><td class="axis-start">6.2</td><td class="">12.9</td><td class="axis-start">2.9</td><td class="">15.1</td><td class="axis-start">3.2</td><td class="">15.7</td><td class="axis-start">5.6</td><td class="">15.0</td><td class="axis-start">10.7</td><td class="">19.3</td><td class="axis-start">2.9</td><td class="">12.5</td><td class="axis-start">3.5</td><td class="">12.7</td><td class="overall">6.0</td><td class="overall">15.8</td></tr><tr><th scope="row">Nano Banana</th><td class="axis-start">7.8</td><td class="">13.5</td><td class="axis-start">5.9</td><td class="">16.0</td><td class="axis-start">7.6</td><td class="">18.5</td><td class="axis-start">4.1</td><td class="">14.3</td><td class="axis-start">6.3</td><td class="">21.6</td><td class="axis-start">1.3</td><td class="">6.0</td><td class="axis-start">5.5</td><td class="">12.0</td><td class="axis-start">8.7</td><td class="">18.6</td><td class="axis-start">1.3</td><td class="">15.0</td><td class="overall">5.5</td><td class="overall">15.3</td></tr><tr><th scope="row">FLUX.2 pro</th><td class="axis-start">7.1</td><td class="">12.0</td><td class="axis-start">6.0</td><td class="">15.9</td><td class="axis-start">5.0</td><td class="">12.9</td><td class="axis-start">1.6</td><td class="">9.5</td><td class="axis-start">6.9</td><td class="">17.4</td><td class="axis-start">2.7</td><td class="">12.9</td><td class="axis-start">1.8</td><td class="">9.9</td><td class="axis-start">17.3</td><td class="">24.8</td><td class="axis-start">1.9</td><td class="">14.2</td><td class="overall">6.3</td><td class="overall">15.0</td></tr><tr><th scope="row">GPT-Image-1</th><td class="axis-start">11.4</td><td class="">20.1</td><td class="axis-start">7.0</td><td class="">15.2</td><td class="axis-start">10.5</td><td class="">21.1</td><td class="axis-start">3.9</td><td class="">15.1</td><td class="axis-start">5.1</td><td class="">15.4</td><td class="axis-start">2.7</td><td class="">11.4</td><td class="axis-start">1.3</td><td class="">12.2</td><td class="axis-start">2.9</td><td class="">12.6</td><td class="axis-start">2.6</td><td class="">11.8</td><td class="overall">5.2</td><td class="overall">14.9</td></tr><tr><th scope="row">Seedream-4.5</th><td class="axis-start">3.0</td><td class="">8.3</td><td class="axis-start">0.0</td><td class="">10.2</td><td class="axis-start">0.0</td><td class="">5.7</td><td class="axis-start">0.0</td><td class="">8.8</td><td class="axis-start">8.5</td><td class="">16.6</td><td class="axis-start">5.7</td><td class="">12.3</td><td class="axis-start">0.0</td><td class="">10.4</td><td class="axis-start">5.8</td><td class="">12.5</td><td class="axis-start">1.8</td><td class="">9.2</td><td class="overall">3.0</td><td class="overall">10.6</td></tr><tr class="group"><th colspan="21">Open-source T2I Models</th></tr><tr><th scope="row">FLUX.2 dev</th><td class="axis-start">1.4</td><td class="">4.1</td><td class="axis-start">3.6</td><td class=""><strong>9.3</strong></td><td class="axis-start"><strong>4.1</strong></td><td class="">9.3</td><td class="axis-start">3.0</td><td class="">11.4</td><td class="axis-start">10.0</td><td class="">18.4</td><td class="axis-start">1.4</td><td class="">7.5</td><td class="axis-start">5.6</td><td class=""><strong>12.8</strong></td><td class="axis-start">1.1</td><td class=""><strong>7.8</strong></td><td class="axis-start">1.3</td><td class=""><strong>12.1</strong></td><td class="overall"><strong>3.5</strong></td><td class="overall"><strong>10.3</strong></td></tr><tr><th scope="row">FLUX.2 klein 9B</th><td class="axis-start">0.0</td><td class=""><strong>4.2</strong></td><td class="axis-start">2.5</td><td class="">9.2</td><td class="axis-start">2.8</td><td class="">8.8</td><td class="axis-start">3.1</td><td class="">11.0</td><td class="axis-start"><strong>10.1</strong></td><td class=""><strong>19.0</strong></td><td class="axis-start">2.7</td><td class="">8.4</td><td class="axis-start">2.7</td><td class="">10.5</td><td class="axis-start">2.0</td><td class="">6.6</td><td class="axis-start">0.0</td><td class="">9.7</td><td class="overall">2.9</td><td class="overall">9.6</td></tr><tr><th scope="row">FLUX.2 klein 4B</th><td class="axis-start">0.0</td><td class="">1.8</td><td class="axis-start"><strong>3.9</strong></td><td class="">8.3</td><td class="axis-start">2.7</td><td class=""><strong>10.2</strong></td><td class="axis-start"><strong>6.6</strong></td><td class=""><strong>17.5</strong></td><td class="axis-start">5.3</td><td class="">11.7</td><td class="axis-start">0.0</td><td class="">7.7</td><td class="axis-start"><strong>7.1</strong></td><td class="">12.4</td><td class="axis-start">0.0</td><td class="">6.1</td><td class="axis-start">2.7</td><td class="">7.1</td><td class="overall">2.9</td><td class="overall">8.9</td></tr><tr><th scope="row">FLUX.1 dev</th><td class="axis-start"><strong>1.7</strong></td><td class="">2.2</td><td class="axis-start">2.9</td><td class="">6.7</td><td class="axis-start">3.2</td><td class="">6.5</td><td class="axis-start">5.8</td><td class="">11.3</td><td class="axis-start">7.4</td><td class="">15.1</td><td class="axis-start"><strong>3.3</strong></td><td class=""><strong>9.7</strong></td><td class="axis-start">3.3</td><td class="">6.1</td><td class="axis-start"><strong>3.6</strong></td><td class="">6.6</td><td class="axis-start">0.0</td><td class="">4.8</td><td class="overall"><strong>3.5</strong></td><td class="overall">7.7</td></tr><tr><th scope="row">FLUX.1 schnell</th><td class="axis-start">1.6</td><td class="">3.9</td><td class="axis-start">2.9</td><td class="">7.2</td><td class="axis-start">0.0</td><td class="">4.0</td><td class="axis-start">3.1</td><td class="">9.0</td><td class="axis-start">8.3</td><td class="">14.9</td><td class="axis-start">3.2</td><td class="">7.0</td><td class="axis-start">2.9</td><td class="">12.4</td><td class="axis-start">0.0</td><td class="">2.9</td><td class="axis-start"><strong>3.4</strong></td><td class="">7.1</td><td class="overall">2.8</td><td class="overall">7.6</td></tr><tr><th scope="row">Qwen-Image 20B</th><td class="axis-start">0.0</td><td class="">1.5</td><td class="axis-start">0.0</td><td class="">2.2</td><td class="axis-start">1.5</td><td class="">4.5</td><td class="axis-start">6.2</td><td class="">11.0</td><td class="axis-start">7.8</td><td class="">13.1</td><td class="axis-start">3.1</td><td class="">7.1</td><td class="axis-start">1.6</td><td class="">7.4</td><td class="axis-start">0.0</td><td class="">2.7</td><td class="axis-start">1.6</td><td class="">5.3</td><td class="overall">2.2</td><td class="overall">5.7</td></tr><tr><th scope="row">SD3.5 large</th><td class="axis-start">0.0</td><td class="">0.6</td><td class="axis-start">1.5</td><td class="">3.8</td><td class="axis-start">0.0</td><td class="">2.8</td><td class="axis-start">5.4</td><td class="">8.9</td><td class="axis-start">1.5</td><td class="">5.3</td><td class="axis-start">1.6</td><td class="">3.1</td><td class="axis-start">1.5</td><td class="">9.7</td><td class="axis-start">0.0</td><td class="">2.9</td><td class="axis-start">1.4</td><td class="">4.7</td><td class="overall">1.3</td><td class="overall">4.5</td></tr><tr><th scope="row">SD3.5 medium</th><td class="axis-start">0.0</td><td class="">0.8</td><td class="axis-start">0.0</td><td class="">1.7</td><td class="axis-start">1.6</td><td class="">3.1</td><td class="axis-start">3.8</td><td class="">8.8</td><td class="axis-start">2.8</td><td class="">7.8</td><td class="axis-start">1.6</td><td class="">5.0</td><td class="axis-start">0.0</td><td class="">4.4</td><td class="axis-start">0.0</td><td class="">3.6</td><td class="axis-start">0.0</td><td class="">5.8</td><td class="overall">1.0</td><td class="overall">4.5</td></tr><tr><th scope="row">Sana 4.8B</th><td class="axis-start">0.0</td><td class="">0.7</td><td class="axis-start">0.0</td><td class="">1.9</td><td class="axis-start">0.0</td><td class="">2.7</td><td class="axis-start">1.9</td><td class="">5.2</td><td class="axis-start">6.0</td><td class="">10.5</td><td class="axis-start">0.0</td><td class="">3.6</td><td class="axis-start">1.7</td><td class="">5.3</td><td class="axis-start">0.0</td><td class="">4.4</td><td class="axis-start">0.0</td><td class="">2.4</td><td class="overall">1.0</td><td class="overall">4.1</td></tr><tr><th scope="row">Sana 0.6B</th><td class="axis-start">0.0</td><td class="">0.6</td><td class="axis-start">0.0</td><td class="">1.6</td><td class="axis-start">1.7</td><td class="">3.0</td><td class="axis-start">1.9</td><td class="">5.5</td><td class="axis-start">4.3</td><td class="">7.0</td><td class="axis-start">1.8</td><td class="">5.7</td><td class="axis-start">1.6</td><td class="">6.7</td><td class="axis-start">0.0</td><td class="">3.4</td><td class="axis-start">0.0</td><td class="">2.4</td><td class="overall">1.2</td><td class="overall">3.9</td></tr><tr><th scope="row">Sana 1.6B</th><td class="axis-start">1.5</td><td class="">1.7</td><td class="axis-start">3.4</td><td class="">4.0</td><td class="axis-start">1.7</td><td class="">2.6</td><td class="axis-start">1.7</td><td class="">6.7</td><td class="axis-start">3.1</td><td class="">5.8</td><td class="axis-start">0.0</td><td class="">1.1</td><td class="axis-start">1.8</td><td class="">6.3</td><td class="axis-start">0.0</td><td class="">2.7</td><td class="axis-start">0.0</td><td class="">2.0</td><td class="overall">1.4</td><td class="overall">3.6</td></tr></tbody></table></div>
+<p class="figure-caption table-notes">Bold: best in each category. Withheld tasks excluded.</p>
+</div></section>
 
 
 <!-- Paper poster -->
@@ -404,13 +357,7 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
+      <pre id="bibtex-code"><code>coming soon...</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
