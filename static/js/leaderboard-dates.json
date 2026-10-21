@@ -1,0 +1,33 @@
+{
+  "source": "Project archived release-date metadata, BROKEN_META.json, 2026-09-07",
+  "models": {
+    "GPT-Image-1": {
+      "date": "2025-04-23",
+      "url": "https://azure.microsoft.com/en-us/blog/unveiling-gpt-image-1-rising-to-new-heights-with-image-generation-in-azure-ai-foundry/"
+    },
+    "GPT-Image-1.5": {
+      "date": "2025-12-16",
+      "url": "https://openai.com/index/new-chatgpt-images-is-here/"
+    },
+    "GPT-Image-2": {
+      "date": "2026-04-21",
+      "url": "https://community.openai.com/t/introducing-gpt-image-2-available-today-in-the-api-and-codex/1379479"
+    },
+    "Nano Banana": {
+      "date": "2025-08-26",
+      "url": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/"
+    },
+    "Nano Banana 2": {
+      "date": "2026-02-26",
+      "url": "https://openrouter.ai/google/gemini-3.1-flash-image-preview"
+    },
+    "FLUX.2 pro": {
+      "date": "2025-11-25",
+      "url": "https://bfl.ai/blog/flux-2"
+    },
+    "Seedream-4.5": {
+      "date": "2025-12-23",
+      "url": "https://openrouter.ai/bytedance-seed/seedream-4.5"
+    }
+  }
+}

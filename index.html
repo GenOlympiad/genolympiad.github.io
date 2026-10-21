@@ -181,6 +181,7 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="static/css/leaderboard.css?v=2">
 </head>
 <body>
 
@@ -192,7 +193,7 @@
 
 
   <main id="main-content">
-  <section class="hero">
+  <section class="hero" id="paper-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -276,6 +277,21 @@
   </div>
 </section>
 
+
+<!-- BEGIN benchmark overview -->
+<section class="section" id="leaderboard"><div class="container is-max-desktop">
+
+<div class="lb-controls"><label>Score <select id="lb-metric"><option value="0">Strict</option><option value="1">Relaxed</option></select></label><label>Category <select id="lb-group"><option value="all">All T2I models</option><option value="closed">Closed-source T2I</option><option value="open">Open-source T2I</option></select></label><label>Axis <select id="lb-axis"><option value="9">Overall</option><option value="0">Text</option><option value="1">C-Fact</option><option value="2">Symbol</option><option value="3">World</option><option value="4">Phys</option><option value="5">Quant</option><option value="6">Spatial</option><option value="7">Latent</option><option value="8">Long</option></select></label></div>
+<div class="lb-charts"><div class="lb-panel"><h3>Progress Over Time</h3><div id="lb-progress"></div><p id="lb-date-note" class="lb-note"></p></div><div class="lb-panel"><h3>Score Rankings</h3><div id="lb-bars"></div></div></div>
+<div class="lb-table-top"><h3>Leaderboard</h3><input id="lb-search" type="search" aria-label="Search models" placeholder="Search models"><a href="#results">Full results ↓</a></div>
+<div class="lb-table-scroll"><table class="lb-table"><thead><tr><th>#</th><th>Model</th><th>Category</th><th><button id="lb-sort" type="button">Strict ↓</button></th><th id="lb-other">Relaxed</th></tr></thead><tbody id="lb-rows"></tbody></table></div>
+<div class="lb-footer"><span id="lb-count"></span><button id="lb-expand" type="button">Show all models</button></div>
+<p class="lb-note">Scores out of 100. Withheld tasks are excluded.</p>
+
+</div></section>
+<!-- END benchmark overview -->
+<script id="lb-dates" type="application/json">{"GPT-Image-1": {"date": "2025-04-23", "url": "https://azure.microsoft.com/en-us/blog/unveiling-gpt-image-1-rising-to-new-heights-with-image-generation-in-azure-ai-foundry/"}, "GPT-Image-1.5": {"date": "2025-12-16", "url": "https://openai.com/index/new-chatgpt-images-is-here/"}, "GPT-Image-2": {"date": "2026-04-21", "url": "https://community.openai.com/t/introducing-gpt-image-2-available-today-in-the-api-and-codex/1379479"}, "Nano Banana": {"date": "2025-08-26", "url": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/"}, "Nano Banana 2": {"date": "2026-02-26", "url": "https://openrouter.ai/google/gemini-3.1-flash-image-preview"}, "FLUX.2 pro": {"date": "2025-11-25", "url": "https://bfl.ai/blog/flux-2"}, "Seedream-4.5": {"date": "2025-12-23", "url": "https://openrouter.ai/bytedance-seed/seedream-4.5"}}</script>
+<script src="static/js/leaderboard.js?v=6" defer></script>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
