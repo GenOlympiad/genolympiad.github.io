@@ -1,80 +1,79 @@
-# Academic Project Page Template
+# GenOlympiad
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+**Benchmarking Frontier Image Models at Their Capability Boundaries**
 
-A clean, responsive template for academic project pages.
+[Project page](https://genolympiad.github.io/) | [Paper](https://arxiv.org/abs/2610.26850) | [Benchmark code](https://github.com/GenOlympiad/GenOlympiad)
 
+GenOlympiad evaluates text-to-image models across nine capability axes: text fidelity, counterfactual instruction following, symbolic systems, world-knowledge grounding, physical consistency, quantity and precision, spatial and 3D reasoning, latent computation, and long-range consistency.
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+This repository hosts the GitHub Pages project website. Benchmark code and evaluation tools are maintained in the [main GenOlympiad repository](https://github.com/GenOlympiad/GenOlympiad).
 
+## Leaderboard
 
+The interactive leaderboard ranks image generation models using Strict or Relaxed scores. It supports category filters, all nine capability axes, model search, and a release-date progress chart. Scores are read directly from the full results table in `index.html`.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+Scores are reported out of 100. Withheld tasks are excluded from axis and overall scores. Overall scores are task-level aggregates, not the unweighted average of the nine axis scores. Ties in Strict are ordered by Relaxed, and vice versa.
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+### Latest addition: GPT-Image-2.6 Sunburst
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+| Axis | Strict | Relaxed |
+| --- | ---: | ---: |
+| Text | 30.9 | 44.4 |
+| C-Fact | 26.7 | 40.7 |
+| Symbol | 22.7 | 34.9 |
+| World | 15.2 | 30.5 |
+| Phys | 10.5 | 29.0 |
+| Quant | 16.7 | 35.8 |
+| Spatial | 10.0 | 27.9 |
+| Latent | 11.2 | 28.4 |
+| Long | 14.6 | 31.8 |
+| **Overall** | **17.4** | **33.6** |
 
-## What's New
+These results are for **GPT-Image-2.6 Sunburst**, not Flare. The final results use the Table 1 evaluation protocol: the initial judgment plus four rounds of cold reads, with scored tasks as the denominator. Release date: **November 4, 2026**, from the [official OpenAI announcement](https://openai.com/index/introducing-images-2-6/).
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+## Updating the website
 
-## Components
+- `index.html`: paper information, full results table, figures, and the date metadata used by the progress chart.
+- `static/js/leaderboard.js`: ranking, filtering, progress chart, and provider-logo mapping.
+- `static/css/leaderboard.css`: leaderboard layout and styling.
+- `static/js/leaderboard-dates.json`: release-date reference manifest.
+- `static/images/providers/`: local provider logos and their source notes.
+- `static/genolympiad-demos/`: self-contained evaluation examples.
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+### Add a model
 
-## Customization
+1. Add a row to the appropriate category of the full results table in `index.html`. Use nine pairs of Strict and Relaxed scores in the table's axis order, followed by the Overall pair (20 numeric cells). Closed-source and open-source T2I rows enter the interactive leaderboard automatically.
+2. Use the task-level Overall scores from the evaluation output. Recheck the bold maximum values within that category for each column.
+3. To include a model in the progress chart, add its exact display name, release date, and source URL to both the inline `lb-dates` JSON in `index.html` and `static/js/leaderboard-dates.json`. Models without a date remain in the rankings.
+4. Add a provider mapping and local logo in `leaderboard.js` if the provider is new.
+5. Check Strict and Relaxed rankings, category and axis filters, and the mobile layout before publishing.
 
-The HTML file has TODO comments showing what to replace:
+## Local preview
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+From this repository, run:
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
+```sh
+python -m http.server 8768
+```
 
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
+Open http://127.0.0.1:8768/. The website is static and requires no build step. GitHub Pages serves the repository files directly.
 
-## Tips
+## Citation
 
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+```bibtex
+@misc{hu2026genolympiadbenchmarkingfrontierimage,
+  title={GenOlympiad: Benchmarking Frontier Image Models at Their Capability Boundaries},
+  author={Xi Hu and Martin Bell and Liang Zheng},
+  year={2026},
+  eprint={2610.26850},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.26850}
+}
+```
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+## Acknowledgments and website license
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+The website uses the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template), adopted from [Nerfies](https://nerfies.github.io/). Provider marks identify the model providers; see `static/images/providers/SOURCES.txt` for asset sources.
+
+The website retains the template's [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). This describes the website template and does not assign a new license to the separate benchmark code, model outputs, or third-party brand assets.

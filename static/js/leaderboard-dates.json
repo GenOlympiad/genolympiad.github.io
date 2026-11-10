@@ -1,5 +1,5 @@
 {
-  "source": "Project archived release-date metadata, BROKEN_META.json, 2026-09-07",
+  "source": "Project archived release-date metadata, plus official OpenAI Images 2.6 release announcement (2026-11-04).",
   "models": {
     "GPT-Image-1": {
       "date": "2025-04-23",
@@ -28,6 +28,10 @@
     "Seedream-4.5": {
       "date": "2025-12-23",
       "url": "https://openrouter.ai/bytedance-seed/seedream-4.5"
+    },
+    "GPT-Image-2.6 Sunburst": {
+      "date": "2026-11-04",
+      "url": "https://openai.com/index/introducing-images-2-6/"
     }
   }
 }
