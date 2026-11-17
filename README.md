@@ -8,9 +8,15 @@ GenOlympiad evaluates text-to-image models across nine capability axes: text fid
 
 This repository hosts the GitHub Pages project website. Benchmark code and evaluation tools are maintained in the [main GenOlympiad repository](https://github.com/GenOlympiad/GenOlympiad).
 
+## 2026-11-17 additions
+
+New models from the November 17 export are included directly in the existing results table and leaderboard. Existing model rows retain their previously published scores. New Overall scores use the scored-task denominator (`strict` / `relaxed` in the source CSV). Axis-level Relaxed scores are included from the revised November 17 export. T2I and coding models appear in two separate leaderboards. Score, axis, search and sorting are shared; each table expands independently. The Category selector filters the charts.
+
+[Source CSV](static/data/2026-11-17/genolympiad-base.csv) | [Model dates and sources](static/data/2026-11-17/model-metadata.json)
+
 ## Leaderboard
 
-The interactive leaderboard ranks image generation models using Strict or Relaxed scores. It supports category filters, all nine capability axes, model search, and a release-date progress chart. Scores are read directly from the full results table in `index.html`.
+The interactive leaderboards rank image generation and coding models separately using Strict or Relaxed scores. It supports category filters, all nine capability axes, model search, and a release-date progress chart. Scores are read directly from the full results table in `index.html`.
 
 Scores are reported out of 100. Withheld tasks are excluded from axis and overall scores. Overall scores are task-level aggregates, not the unweighted average of the nine axis scores. Ties in Strict are ordered by Relaxed, and vice versa.
 
@@ -34,6 +40,7 @@ These results are for **GPT-Image-2.6 Sunburst**, not Flare. The final results u
 ## Updating the website
 
 - `index.html`: paper information, full results table, figures, and the date metadata used by the progress chart.
+- `static/data/2026-11-17/`: archived batch results and sourced provider/release metadata.
 - `static/js/leaderboard.js`: ranking, filtering, progress chart, and provider-logo mapping.
 - `static/css/leaderboard.css`: leaderboard layout and styling.
 - `static/js/leaderboard-dates.json`: release-date reference manifest.

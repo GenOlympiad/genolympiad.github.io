@@ -32,6 +32,62 @@
     "GPT-Image-2.6 Sunburst": {
       "date": "2026-11-04",
       "url": "https://openai.com/index/introducing-images-2-6/"
+    },
+    "GPT-5.6 Terra": {
+      "date": "2026-07-09",
+      "url": "https://deploymentsafety.openai.com/gpt-5-6/change-log"
+    },
+    "GPT-5.6 Luna": {
+      "date": "2026-07-09",
+      "url": "https://deploymentsafety.openai.com/gpt-5-6/change-log"
+    },
+    "Kimi K3.1 Pro": {
+      "date": "2026-10-24",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+    },
+    "DeepSeek V4.1 Flash": {
+      "date": "2026-09-10",
+      "url": "https://www.deepseek.com/news/deepseek-v4-1-flash/"
+    },
+    "Gemini 4 Argon": {
+      "date": "2026-10-13",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/"
+    },
+    "Gemini 3.8 Flash": {
+      "date": "2026-09-02",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+    },
+    "Mistral Large 4": {
+      "date": "2026-10-06",
+      "url": "https://docs.mistral.ai/models/mistral-large-4"
+    },
+    "GPT-6 Luna": {
+      "date": "2026-09-22",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+    },
+    "Claude Haiku 5.5": {
+      "date": "2026-10-07",
+      "url": "https://www.anthropic.com/news/models"
+    },
+    "GLM-5.3 Flash": {
+      "date": "2026-08-26",
+      "url": "https://z.ai/blog/glm-5.3-flash"
+    },
+    "GLM-5.3": {
+      "date": "2026-08-14",
+      "url": "https://z.ai/blog/glm-5.3"
+    },
+    "GPT-Image-2.5 Flare (medium)": {
+      "date": "2026-09-08",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-5/"
+    },
+    "Qwen-Image-2.1 Turbo": {
+      "date": "2026-10-12",
+      "url": "https://www.alibabacloud.com/en/news/product/new-image-generation-llm-qwen-image-21-turbo-ohz"
+    },
+    "Qwen-Image-2.1": {
+      "date": "2026-09-20",
+      "url": "https://qwen.ai/blog?id=qwen-image-2.1"
     }
   }
 }

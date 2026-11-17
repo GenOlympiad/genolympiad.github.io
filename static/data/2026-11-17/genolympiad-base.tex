@@ -1,0 +1,42 @@
+% needs \usepackage{booktabs}
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{Official} & \multicolumn{2}{c}{No image $=0$} & Image \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Model & Strict & Relaxed & Strict & Relaxed & drawn (\%) \\
+\midrule
+\multicolumn{6}{@{}l}{\textsc{Qwen base models}} \\
+ Qwen3.8-27B & 20.6 & 31.1 & 11.5 & 17.4 & 56.0 \\
+ Qwen3.5-9B & 9.2 & 14.1 & 2.0 & 3.1 & 22.0 \\
+\midrule
+\multicolumn{6}{@{}l}{\textsc{Code: SFT teachers}} \\
+ GPT-5.6 Sol & 40.1 & 54.6 & 39.9 & 54.4 & 99.6 \\
+ GPT-5.6 Terra & 35.0 & 48.7 & 34.4 & 47.9 & 98.3 \\
+ GPT-5.6 Luna & 28.9 & 44.4 & 28.4 & 43.5 & 98.1 \\
+\midrule
+\multicolumn{6}{@{}l}{\textsc{Code: other LLMs}} \\
+ Kimi K3.1 Pro & 44.5 & 57.8 & 43.9 & 57.0 & 98.6 \\
+ DeepSeek V4.1 Flash & 43.4 & 56.0 & 30.1 & 38.9 & 69.5 \\
+ Gemini 4 Argon & 39.9 & 56.5 & 39.3 & 55.6 & 98.5 \\
+ Gemini 3.8 Flash & 37.8 & 52.0 & 36.4 & 50.0 & 96.2 \\
+ Mistral Large 4 & 35.9 & 51.9 & 32.6 & 47.1 & 90.7 \\
+ GPT-6 Luna & 35.1 & 49.7 & 34.7 & 49.3 & 99.0 \\
+ Claude Haiku 5.5 & 33.3 & 47.6 & 32.8 & 46.9 & 98.5 \\
+ GLM-5.3 Flash & 26.9 & 40.6 & 20.7 & 31.3 & 77.1 \\
+ GLM-5.3 & 26.4 & 41.4 & 24.7 & 38.7 & 93.5 \\
+ Muse Glimmer 30B & 25.7 & 38.1 & 24.4 & 36.1 & 94.9 \\
+\midrule
+\multicolumn{6}{@{}l}{\textsc{Image models}} \\
+ GPT-Image-2.5 Flare (medium) & 14.5 & 28.0 & 14.4 & 27.8 & 99.3 \\
+ GPT-Image-2 & 13.8 & 27.5 & 13.7 & 27.4 & 99.6 \\
+ GPT-Image-1.5 & 8.9 & 21.0 & 8.8 & 20.9 & 99.6 \\
+ Qwen-Image-2.1 Turbo & 3.5 & 9.2 & 3.5 & 9.2 & 100.0 \\
+ Qwen-Image-2.1 & 2.9 & 8.9 & 2.9 & 8.9 & 99.8 \\
+\bottomrule
+\end{tabular}
+\caption{GenOlympiad for untrained models (801 tasks, 0--100, Gemini 2.5 Flash judge, withheld tasks left out). Official: the benchmark's score, which leaves out tasks with no image. No image $=0$: tasks where the model drew no image count as 0. Code models write a program that we render; image models output pixels directly. One sample per task.}
+\label{tab:genolympiad-base}
+\end{table}

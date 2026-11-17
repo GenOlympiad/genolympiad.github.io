@@ -1,0 +1,966 @@
+{
+  "id": "2026-11-17",
+  "archive": "genolympiad-base-20261117 (2).zip",
+  "archive_sha256": "5a2ff83e33c3b4999a83cf0cb35f39d0603675956787de449da82c057145e6af",
+  "protocol": "801 tasks; one sample per task; Gemini 2.5 Flash via OpenRouter. Withheld tasks excluded. Separate from the paper multi-read results.",
+  "count_semantics": {
+    "images": "scored tasks",
+    "tasks": "scored + not_generated; excludes withheld",
+    "image_rate": "100 * scored / (scored + not_generated)"
+  },
+  "models": [
+    {
+      "name": "Qwen3.8-27B",
+      "group": "base",
+      "source_group": "Qwen base models",
+      "provider": "qwen",
+      "official": [
+        20.6,
+        31.1
+      ],
+      "fail0": [
+        11.5,
+        17.4
+      ],
+      "scored": 413,
+      "non_withheld": 737,
+      "scored_rate": 56.0,
+      "axis_strict": [
+        29.2,
+        15.6,
+        12.8,
+        9.5,
+        17.1,
+        27.5,
+        12.5,
+        40.0,
+        7.5
+      ],
+      "axis_relaxed": [
+        36.2,
+        25.6,
+        26.2,
+        24.8,
+        26.8,
+        36.2,
+        22.2,
+        49.8,
+        18.7
+      ],
+      "source": "genolympiad-gemini-20261111/qwen3.8-27b-base",
+      "release": {
+        "provider": "qwen",
+        "release_date": null,
+        "date_kind": "base checkpoint unverified",
+        "source_url": "https://github.com/QwenLM/Qwen3.8",
+        "checked_on": "2026-11-17",
+        "note": "Source data labels this a base run. The official post-trained 27B model was released 2026-08-14; the exact base checkpoint is not identified by the archive."
+      }
+    },
+    {
+      "name": "Qwen3.5-9B",
+      "group": "base",
+      "source_group": "Qwen base models",
+      "provider": "qwen",
+      "official": [
+        9.2,
+        14.1
+      ],
+      "fail0": [
+        2.0,
+        3.1
+      ],
+      "scored": 163,
+      "non_withheld": 740,
+      "scored_rate": 22.0,
+      "axis_strict": [
+        0.0,
+        6.2,
+        15.4,
+        0.0,
+        0.0,
+        8.3,
+        0.0,
+        28.1,
+        9.5
+      ],
+      "axis_relaxed": [
+        2.0,
+        6.8,
+        25.5,
+        4.4,
+        3.8,
+        14.9,
+        6.9,
+        35.8,
+        11.6
+      ],
+      "source": "genolympiad-gemini-20261111/qwen3.5-9b-base",
+      "release": {
+        "provider": "qwen",
+        "release_date": null,
+        "date_kind": "base release day unverified",
+        "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B-Base",
+        "checked_on": "2026-11-17",
+        "note": "Official base weights confirmed. Repository creation 2026-02-26 is not proof of public release. The 9B family launch is 2026-03-02."
+      }
+    },
+    {
+      "name": "GPT-5.6 Sol",
+      "group": "coding",
+      "source_group": "Code: SFT teachers",
+      "provider": "openai",
+      "official": [
+        40.1,
+        54.6
+      ],
+      "fail0": [
+        39.9,
+        54.4
+      ],
+      "scored": 718,
+      "non_withheld": 721,
+      "scored_rate": 99.6,
+      "axis_strict": [
+        68.4,
+        34.9,
+        42.3,
+        20.9,
+        28.2,
+        40.0,
+        28.2,
+        59.4,
+        30.3
+      ],
+      "axis_relaxed": [
+        77.1,
+        45.3,
+        54.6,
+        42.8,
+        47.2,
+        53.4,
+        44.2,
+        74.4,
+        45.5
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-5.6-sol",
+      "release": {
+        "provider": "openai",
+        "release_date": "2026-07-09",
+        "date_kind": "general availability",
+        "source_url": "https://deploymentsafety.openai.com/gpt-5-6/change-log",
+        "checked_on": "2026-11-17",
+        "note": "Limited trusted-partner preview began 2026-06-26; the public family launch was 2026-07-09."
+      }
+    },
+    {
+      "name": "GPT-5.6 Terra",
+      "group": "coding",
+      "source_group": "Code: SFT teachers",
+      "provider": "openai",
+      "official": [
+        35.0,
+        48.7
+      ],
+      "fail0": [
+        34.4,
+        47.9
+      ],
+      "scored": 715,
+      "non_withheld": 727,
+      "scored_rate": 98.3,
+      "axis_strict": [
+        54.3,
+        33.3,
+        45.6,
+        14.7,
+        21.2,
+        38.7,
+        19.2,
+        56.6,
+        21.1
+      ],
+      "axis_relaxed": [
+        65.8,
+        45.3,
+        56.4,
+        32.1,
+        34.3,
+        47.6,
+        42.6,
+        71.2,
+        33.8
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-5.6-terra",
+      "release": {
+        "provider": "openai",
+        "release_date": "2026-07-09",
+        "date_kind": "general availability",
+        "source_url": "https://deploymentsafety.openai.com/gpt-5-6/change-log",
+        "checked_on": "2026-11-17",
+        "note": "Limited trusted-partner preview began 2026-06-26; the public family launch was 2026-07-09."
+      }
+    },
+    {
+      "name": "GPT-5.6 Luna",
+      "group": "coding",
+      "source_group": "Code: SFT teachers",
+      "provider": "openai",
+      "official": [
+        28.9,
+        44.4
+      ],
+      "fail0": [
+        28.4,
+        43.5
+      ],
+      "scored": 719,
+      "non_withheld": 733,
+      "scored_rate": 98.1,
+      "axis_strict": [
+        45.9,
+        25.3,
+        35.1,
+        13.9,
+        13.6,
+        33.8,
+        16.4,
+        49.5,
+        20.5
+      ],
+      "axis_relaxed": [
+        56.9,
+        40.3,
+        48.8,
+        31.2,
+        30.5,
+        48.8,
+        34.7,
+        64.5,
+        37.5
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-5.6-luna",
+      "release": {
+        "provider": "openai",
+        "release_date": "2026-07-09",
+        "date_kind": "general availability",
+        "source_url": "https://deploymentsafety.openai.com/gpt-5-6/change-log",
+        "checked_on": "2026-11-17",
+        "note": "Limited trusted-partner preview began 2026-06-26; the public family launch was 2026-07-09."
+      }
+    },
+    {
+      "name": "Kimi K3.1 Pro",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "kimi",
+      "official": [
+        44.5,
+        57.8
+      ],
+      "fail0": [
+        43.9,
+        57.0
+      ],
+      "scored": 728,
+      "non_withheld": 738,
+      "scored_rate": 98.6,
+      "axis_strict": [
+        73.8,
+        47.6,
+        47.5,
+        22.9,
+        32.9,
+        51.4,
+        32.4,
+        57.4,
+        28.9
+      ],
+      "axis_relaxed": [
+        77.8,
+        55.5,
+        60.8,
+        42.1,
+        49.9,
+        62.4,
+        48.9,
+        73.9,
+        43.3
+      ],
+      "source": "genolympiad-frontier-20261116/judged/kimi-k3.1-pro",
+      "release": {
+        "provider": "kimi",
+        "release_date": "2026-10-24",
+        "date_kind": "product/API release",
+        "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+        "checked_on": "2026-11-17",
+        "note": "The page publication metadata is 2026-10-24. It separately announces weights by November 4."
+      }
+    },
+    {
+      "name": "DeepSeek V4.1 Flash",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "deepseek",
+      "official": [
+        43.4,
+        56.0
+      ],
+      "fail0": [
+        30.1,
+        38.9
+      ],
+      "scored": 519,
+      "non_withheld": 747,
+      "scored_rate": 69.5,
+      "axis_strict": [
+        64.4,
+        40.8,
+        46.2,
+        20.0,
+        30.0,
+        38.9,
+        33.3,
+        56.5,
+        35.2
+      ],
+      "axis_relaxed": [
+        68.8,
+        51.8,
+        59.4,
+        34.2,
+        45.9,
+        52.6,
+        49.0,
+        72.9,
+        47.9
+      ],
+      "source": "genolympiad-frontier-20261116/judged/deepseek-v4.1-flash",
+      "release": {
+        "provider": "deepseek",
+        "release_date": "2026-09-10",
+        "date_kind": "official announcement",
+        "source_url": "https://www.deepseek.com/news/deepseek-v4-1-flash/",
+        "checked_on": "2026-11-17",
+        "note": "The archive does not specify whether the later 1017 snapshot was used; this date is for the named model family."
+      }
+    },
+    {
+      "name": "Gemini 4 Argon",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "google",
+      "official": [
+        39.9,
+        56.5
+      ],
+      "fail0": [
+        39.3,
+        55.6
+      ],
+      "scored": 717,
+      "non_withheld": 728,
+      "scored_rate": 98.5,
+      "axis_strict": [
+        62.8,
+        41.2,
+        37.7,
+        21.7,
+        28.6,
+        38.7,
+        30.7,
+        55.3,
+        34.6
+      ],
+      "axis_relaxed": [
+        72.7,
+        56.4,
+        52.1,
+        43.8,
+        48.5,
+        54.1,
+        49.5,
+        72.9,
+        50.9
+      ],
+      "source": "genolympiad-frontier-20261116/judged/gemini-4-argon",
+      "release": {
+        "provider": "google",
+        "release_date": "2026-10-13",
+        "date_kind": "public API availability",
+        "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/",
+        "checked_on": "2026-11-17",
+        "note": "Trusted defender preview announced 2026-09-30; public developer access began 2026-10-13."
+      }
+    },
+    {
+      "name": "Gemini 3.8 Flash",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "google",
+      "official": [
+        37.8,
+        52.0
+      ],
+      "fail0": [
+        36.4,
+        50.0
+      ],
+      "scored": 703,
+      "non_withheld": 731,
+      "scored_rate": 96.2,
+      "axis_strict": [
+        72.2,
+        36.5,
+        37.2,
+        20.0,
+        29.9,
+        26.4,
+        24.3,
+        56.6,
+        27.4
+      ],
+      "axis_relaxed": [
+        79.8,
+        45.1,
+        50.1,
+        37.7,
+        44.9,
+        42.7,
+        42.2,
+        71.3,
+        45.4
+      ],
+      "source": "genolympiad-frontier-20261116/judged/gemini-3.8-flash",
+      "release": {
+        "provider": "google",
+        "release_date": "2026-09-02",
+        "date_kind": "public release",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "checked_on": "2026-11-17"
+      }
+    },
+    {
+      "name": "Mistral Large 4",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "mistral",
+      "official": [
+        35.9,
+        51.9
+      ],
+      "fail0": [
+        32.6,
+        47.1
+      ],
+      "scored": 666,
+      "non_withheld": 734,
+      "scored_rate": 90.7,
+      "axis_strict": [
+        64.5,
+        32.1,
+        38.4,
+        21.2,
+        23.3,
+        29.2,
+        20.3,
+        55.6,
+        25.7
+      ],
+      "axis_relaxed": [
+        76.5,
+        45.8,
+        55.3,
+        35.8,
+        41.9,
+        46.2,
+        38.7,
+        72.6,
+        42.0
+      ],
+      "source": "genolympiad-frontier-20261116/judged/mistral-large-4",
+      "release": {
+        "provider": "mistral",
+        "release_date": "2026-10-06",
+        "date_kind": "public API preview",
+        "source_url": "https://docs.mistral.ai/models/mistral-large-4",
+        "checked_on": "2026-11-17",
+        "note": "First public preview. Full version is dated 2026-10-29 at https://legal.mistral.ai/ai-governance/models/mistral-large-4/; the archive does not specify a dated snapshot."
+      }
+    },
+    {
+      "name": "GPT-6 Luna",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "openai",
+      "official": [
+        35.1,
+        49.7
+      ],
+      "fail0": [
+        34.7,
+        49.3
+      ],
+      "scored": 727,
+      "non_withheld": 734,
+      "scored_rate": 99.0,
+      "axis_strict": [
+        53.8,
+        38.2,
+        41.2,
+        16.2,
+        17.3,
+        39.2,
+        23.3,
+        51.4,
+        26.6
+      ],
+      "axis_relaxed": [
+        65.3,
+        49.7,
+        54.4,
+        34.5,
+        34.6,
+        50.7,
+        40.2,
+        67.7,
+        42.5
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-6-luna",
+      "release": {
+        "provider": "openai",
+        "release_date": "2026-09-22",
+        "date_kind": "first API availability",
+        "source_url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+        "checked_on": "2026-11-17",
+        "note": "An October ChatGPT update is separate; the archive does not identify a dated snapshot."
+      }
+    },
+    {
+      "name": "Claude Haiku 5.5",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "anthropic",
+      "official": [
+        33.3,
+        47.6
+      ],
+      "fail0": [
+        32.8,
+        46.9
+      ],
+      "scored": 714,
+      "non_withheld": 725,
+      "scored_rate": 98.5,
+      "axis_strict": [
+        54.3,
+        34.5,
+        28.8,
+        15.5,
+        21.8,
+        34.8,
+        18.6,
+        57.1,
+        25.0
+      ],
+      "axis_relaxed": [
+        64.6,
+        47.3,
+        45.2,
+        29.2,
+        36.8,
+        48.5,
+        37.3,
+        69.7,
+        41.4
+      ],
+      "source": "genolympiad-frontier-20261116/judged/claude-haiku-5.5",
+      "release": {
+        "provider": "anthropic",
+        "release_date": "2026-10-07",
+        "date_kind": "official model announcement",
+        "source_url": "https://www.anthropic.com/news/models",
+        "checked_on": "2026-11-17"
+      }
+    },
+    {
+      "name": "GLM-5.3 Flash",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "zai",
+      "official": [
+        26.9,
+        40.6
+      ],
+      "fail0": [
+        20.7,
+        31.3
+      ],
+      "scored": 566,
+      "non_withheld": 734,
+      "scored_rate": 77.1,
+      "axis_strict": [
+        24.1,
+        33.3,
+        27.9,
+        16.7,
+        21.0,
+        23.3,
+        14.5,
+        53.5,
+        12.1
+      ],
+      "axis_relaxed": [
+        33.0,
+        45.4,
+        43.2,
+        33.7,
+        36.5,
+        35.5,
+        34.2,
+        67.2,
+        22.5
+      ],
+      "source": "genolympiad-frontier-20261116/judged/glm-5.3-flash",
+      "release": {
+        "provider": "zai",
+        "release_date": "2026-08-26",
+        "date_kind": "public release",
+        "source_url": "https://z.ai/blog/glm-5.3-flash",
+        "checked_on": "2026-11-17"
+      }
+    },
+    {
+      "name": "GLM-5.3",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "zai",
+      "official": [
+        26.4,
+        41.4
+      ],
+      "fail0": [
+        24.7,
+        38.7
+      ],
+      "scored": 675,
+      "non_withheld": 722,
+      "scored_rate": 93.5,
+      "axis_strict": [
+        32.4,
+        21.8,
+        31.5,
+        17.6,
+        16.0,
+        27.1,
+        14.5,
+        43.3,
+        26.7
+      ],
+      "axis_relaxed": [
+        43.4,
+        37.0,
+        43.4,
+        37.1,
+        32.4,
+        40.3,
+        35.1,
+        59.5,
+        38.5
+      ],
+      "source": "genolympiad-frontier-20261116/judged/glm-5.3",
+      "release": {
+        "provider": "zai",
+        "release_date": "2026-08-14",
+        "date_kind": "API release",
+        "source_url": "https://z.ai/blog/glm-5.3",
+        "checked_on": "2026-11-17",
+        "note": "Open weights were announced for two weeks later."
+      }
+    },
+    {
+      "name": "Muse Glimmer 30B",
+      "group": "coding",
+      "source_group": "Code: other LLMs",
+      "provider": "meta",
+      "official": [
+        25.7,
+        38.1
+      ],
+      "fail0": [
+        24.4,
+        36.1
+      ],
+      "scored": 685,
+      "non_withheld": 722,
+      "scored_rate": 94.9,
+      "axis_strict": [
+        31.6,
+        23.8,
+        24.0,
+        17.6,
+        17.7,
+        30.4,
+        14.5,
+        47.4,
+        17.6
+      ],
+      "axis_relaxed": [
+        41.1,
+        33.0,
+        35.6,
+        29.4,
+        31.4,
+        40.1,
+        26.6,
+        64.2,
+        33.1
+      ],
+      "source": "genolympiad-frontier-20261116/judged/muse-glimmer-30b",
+      "release": {
+        "provider": "meta",
+        "release_date": null,
+        "date_kind": "month precision",
+        "source_url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+        "checked_on": "2026-11-17",
+        "note": "Official model card states August 2026. HF repository creation 2026-08-09 and NVIDIA service listing 2026-08-10 do not establish one unambiguous first-public day; paper appeared in October."
+      }
+    },
+    {
+      "name": "GPT-Image-2.5 Flare (medium)",
+      "group": "closed",
+      "source_group": "Image models",
+      "provider": "openai",
+      "official": [
+        14.5,
+        28.0
+      ],
+      "fail0": [
+        14.4,
+        27.8
+      ],
+      "scored": 723,
+      "non_withheld": 728,
+      "scored_rate": 99.3,
+      "axis_strict": [
+        27.2,
+        17.9,
+        19.0,
+        12.3,
+        9.8,
+        14.7,
+        12.0,
+        6.7,
+        13.0
+      ],
+      "axis_relaxed": [
+        36.7,
+        30.2,
+        33.4,
+        26.8,
+        25.2,
+        26.0,
+        27.9,
+        18.2,
+        29.9
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-image-2.5-flare-medium",
+      "release": {
+        "provider": "openai",
+        "release_date": "2026-09-08",
+        "date_kind": "public release",
+        "source_url": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+        "checked_on": "2026-11-17"
+      }
+    },
+    {
+      "name": "GPT-Image-2",
+      "group": "closed",
+      "source_group": "Image models",
+      "provider": "openai",
+      "official": [
+        13.8,
+        27.5
+      ],
+      "fail0": [
+        13.7,
+        27.4
+      ],
+      "scored": 727,
+      "non_withheld": 730,
+      "scored_rate": 99.6,
+      "axis_strict": [
+        23.1,
+        17.4,
+        15.6,
+        12.2,
+        14.6,
+        13.5,
+        13.9,
+        8.8,
+        6.1
+      ],
+      "axis_relaxed": [
+        33.1,
+        32.4,
+        28.3,
+        26.4,
+        33.0,
+        27.9,
+        26.9,
+        21.4,
+        19.7
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-image-2",
+      "release": {
+        "provider": "openai",
+        "release_date": "2026-04-21",
+        "date_kind": "dated API snapshot",
+        "source_url": "https://developers.openai.com/api/reference/resources/images/methods/generate",
+        "checked_on": "2026-11-17"
+      }
+    },
+    {
+      "name": "GPT-Image-1.5",
+      "group": "closed",
+      "source_group": "Image models",
+      "provider": "openai",
+      "official": [
+        8.9,
+        21.0
+      ],
+      "fail0": [
+        8.8,
+        20.9
+      ],
+      "scored": 710,
+      "non_withheld": 713,
+      "scored_rate": 99.6,
+      "axis_strict": [
+        9.9,
+        11.8,
+        16.7,
+        13.0,
+        6.2,
+        7.4,
+        5.6,
+        4.0,
+        6.3
+      ],
+      "axis_relaxed": [
+        21.9,
+        22.1,
+        25.8,
+        27.6,
+        21.0,
+        17.9,
+        20.5,
+        16.1,
+        17.3
+      ],
+      "source": "genolympiad-gemini-20261111/gpt-image-1.5",
+      "release": {
+        "provider": "openai",
+        "release_date": "2025-12-16",
+        "date_kind": "public release",
+        "source_url": "https://openai.com/index/new-chatgpt-images-is-here/",
+        "checked_on": "2026-11-17"
+      }
+    },
+    {
+      "name": "Qwen-Image-2.1 Turbo",
+      "group": "open",
+      "source_group": "Image models",
+      "provider": "qwen",
+      "official": [
+        3.5,
+        9.2
+      ],
+      "fail0": [
+        3.5,
+        9.2
+      ],
+      "scored": 657,
+      "non_withheld": 657,
+      "scored_rate": 100.0,
+      "axis_strict": [
+        1.4,
+        8.0,
+        2.9,
+        4.8,
+        4.3,
+        6.8,
+        2.8,
+        1.0,
+        0.0
+      ],
+      "axis_relaxed": [
+        4.8,
+        15.3,
+        6.4,
+        8.6,
+        11.6,
+        14.5,
+        11.0,
+        5.4,
+        6.2
+      ],
+      "source": "genolympiad-frontier-20261116/judged/qwen-image-2.1-turbo",
+      "release": {
+        "provider": "qwen",
+        "release_date": "2026-10-12",
+        "date_kind": "official API announcement",
+        "source_url": "https://www.alibabacloud.com/en/news/product/new-image-generation-llm-qwen-image-21-turbo-ohz",
+        "checked_on": "2026-11-17",
+        "note": "Uses the Turbo-specific Alibaba Cloud announcement, not the base model launch date."
+      }
+    },
+    {
+      "name": "Qwen-Image-2.1",
+      "group": "open",
+      "source_group": "Image models",
+      "provider": "qwen",
+      "official": [
+        2.9,
+        8.9
+      ],
+      "fail0": [
+        2.9,
+        8.9
+      ],
+      "scored": 664,
+      "non_withheld": 665,
+      "scored_rate": 99.8,
+      "axis_strict": [
+        0.0,
+        3.8,
+        4.2,
+        1.6,
+        2.8,
+        7.8,
+        4.3,
+        1.0,
+        1.4
+      ],
+      "axis_relaxed": [
+        2.3,
+        10.6,
+        8.1,
+        6.6,
+        10.6,
+        20.1,
+        9.8,
+        6.2,
+        7.7
+      ],
+      "source": "t2i-qwenimage-20261115/genolympiad-qwen-image-2.1",
+      "release": {
+        "provider": "qwen",
+        "release_date": "2026-09-20",
+        "date_kind": "open model announcement",
+        "source_url": "https://qwen.ai/blog?id=qwen-image-2.1",
+        "checked_on": "2026-11-17"
+      }
+    }
+  ]
+}
