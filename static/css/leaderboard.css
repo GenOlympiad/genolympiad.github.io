@@ -4,3 +4,5 @@
 #leaderboard [hidden]{display:none!important}#results-20261117 summary{cursor:pointer;font-weight:600}#results-20261117 .content{max-width:960px;margin:0 auto 20px}
 
 #results-20261117>div>.full-results-scroll>.full-results{min-width:820px}
+
+#results .full-results .lb-model{display:inline-flex;align-items:center;gap:6px}#results .full-results .lb-model img{width:16px;height:16px;object-fit:contain;flex-shrink:0}
